@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improvement as a Stoic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('bg.jpg') no-repeat center center/cover;
+            color: black;
+            margin: 0;
+            padding: 50px;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+            align-items: center;
+            gap: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s forwards;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .image-container {
+            width: 40%;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeInScale 1s forwards 0.5s;
+        }
+        .text-container {
+            width: 60%;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .point {
+            font-size: 1.8rem;
+            color: #333;
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 1s forwards 1s;
+        }
+        .paragraph {
+            font-size: 1.4rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 1s forwards 1.2s;
+            line-height: 1.6;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Improvement as a Stoic</h1>
+    <div class="container">
+        <div class="image-container">
+            <img src="file:///E:/Random/WEB/stoic1.jpg" alt="">
+        </div>
+        <div class="text-container">
+            <h2 class="point">1. Control Your Mind</h2>
+            <p class="paragraph">A Stoic understands that true power lies in controlling one’s reactions and thoughts rather than external circumstances.</p>
+            <h2 class="point">2. Embrace Discomfort</h2>
+            <p class="paragraph">Growth comes from stepping outside of comfort zones. A Stoic willingly accepts challenges as opportunities for self-betterment.</p>
+            <h2 class="point">3. Focus on What You Can Control</h2>
+            <p class="paragraph">Instead of wasting energy on things beyond control, a Stoic focuses on actions and attitudes that shape a fulfilling life.</p>
+        </div>
+    </div>
+</body>
+</html>

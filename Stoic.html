@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improvement & Stoicism</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            margin: 0;
+            display: flex;
+            overflow-x: hidden;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #222;
+            padding: 20px;
+            position: fixed;
+            left: -250px;
+            transition: 0.5s ease-in-out;
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .menu-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+        .menu li {
+            padding: 10px 0;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .content {
+            flex: 1;
+            padding: 50px;
+            margin-left: 50px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s forwards;
+        }
+        .paragraph {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 20px auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.5s forwards 0.5s;
+        }
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            width: 400px;
+            height: 250px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeInScale 1s forwards 1s;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .keys {
+            margin-top: 20px;
+        }
+        .keys button {
+            margin: 5px;
+            padding: 8px 15px;
+            background: #444;
+            cursor: pointer;
+        }
+        .keys button:hover {
+            background: #666;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    <div class="sidebar" id="sidebar">
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Quotes</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="keys">
+            <button onclick="openNewWindow('diet.html')">Diet</button>
+            <button onclick="openNewWindow('improvement.html')">Improvement</button>
+            <button onclick="openNewWindow('lifestyle.html')">Lifestyle</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Improvement & Stoicism</h1>
+        <p class="paragraph">Stoicism teaches us to embrace challenges, focus on what we can control, and cultivate inner peace. The journey of self-improvement begins with discipline, resilience, and wisdom.</p>
+        <p class="quote" id="quote">"Waste no more time arguing about what a good man should be. Be one." - Marcus Aurelius</p>
+        <p class="grind"><h1>The Art of Grinding: Stoicism Explained</h1>
+
+
+Stoicism is a powerful philosophy built for enduring life’s challenges with strength and focus. It teaches you to take charge of what you can control—your thoughts, your actions, your discipline—while accepting what you can’t, like setbacks or other people’s choices. The grind lies in maintaining composure and determination, no matter the struggle, by mastering your emotions instead of letting them rule you. It’s about resilience, like forging yourself through every trial into someone unbreakable.
+ With Stoicism, you develop the quiet, steady courage to face anything life demands of you.</p>
+<div class="image-container">
+            <img id="image" src="file:///E:/Random/WEB/images/stoic1.jpg" alt="">
+        </div>
+        <button onclick="nextSlide()">Next Quote & Image</button>
+    </div>
+    
+    <script>
+        const quotes = [
+            "Waste no more time arguing about what a good man should be. Be one. - Marcus Aurelius",
+            "The happiness of your life depends upon the quality of your thoughts. - Marcus Aurelius",
+            "He who is brave is free. - Seneca",
+            "Do what you can, with what you have, where you are. - Theodore Roosevelt",
+            "We are what we repeatedly do. Excellence, then, is not an act, but a habit. - Aristotle"
+        ];
+
+        const images = [
+            "file:///E:/Random/WEB/images/stoic1.jpg",
+            "images/stoic2.jpg",
+            "images/stoic3.jpg"
+        ];
+        let index = 0;
+
+        function nextSlide() {
+            index = (index + 1) % quotes.length;
+            document.getElementById("quote").innerText = quotes[index];
+            document.getElementById("image").src = images[index];
+        }
+
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+
+        function openNewWindow(page) {
+            window.open(page, '_blank');
+        }
+    </script>
+</body>
+</html>
